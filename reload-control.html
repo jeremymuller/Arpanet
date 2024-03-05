@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Arpanet | reload</title>
+	<link rel="stylesheet" type="text/css" href="includes/styles.css" />
+	<!-- <link rel="stylesheet" type="text/css" href="includes/styles.css" /> -->
+
+	<!-- <?php
+		// check if mobile device or not
+		function isMobile() {
+		    return preg_match("/(android|avantgo|blackberry|bolt|boost|cricket|docomo|fone|hiptop|mini|mobi|palm|phone|pie|tablet|up\.browser|up\.link|webos|wos)/i", $_SERVER["HTTP_USER_AGENT"]);
+		}
+
+		$mobile = isMobile();
+		if ($mobile) {
+			echo '<link rel="stylesheet" type="text/css" href="includes/styles.css">';
+		} else {
+		    echo '<link rel="stylesheet" type="text/css" href="includes/styles-desktop.css">';
+		}
+		echo "\n\n";
+		require('templates/favicon.php');
+	?> -->
+
+	<!-- favicon stuff -->
+	<link rel="apple-touch-icon" sizes="57x57" href="favicon/apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="favicon/apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="favicon/apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="favicon/apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="favicon/apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="favicon/apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="favicon/apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="favicon/apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192" href="favicon/android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon/favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+	<link rel="manifest" href="favicon/manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="favicon/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
+
+
+</head>
+<body class="controller">
+	<div class="wrapper">
+		<button id="reloadButton" class="splash" onclick="reset()">Reload</button>
+	</div>
+
+	<!-- scripts -->
+	<script src="libraries/socket.io.min.js" type="text/javascript"></script>
+	<script src="includes/reloadpage.js" type="text/javascript"></script>
+
+	<!-- Include the PubNub Library -->
+	<!-- <script src="https://cdn.pubnub.com/sdk/javascript/pubnub.4.21.7.js"></script> -->
+
+	<!-- Instantiate PubNub -->
+	<!-- <script type="text/javascript">
+
+		pubnub = new PubNub({
+			publishKey: 'pub-c-21033e11-41b5-46ff-8c04-10c41fc39bf5',
+			subscribeKey: 'sub-c-e224e380-ed78-4e38-9c5a-a123062fcb96'
+		});
+		// Publish a simple message to the JeremyMuller_Orbitals channel
+		// var i = 0;
+		// window.setInterval(function() {
+		// 	publishIt(i++);
+		// }, 1000);
+		// function publishIt() {
+		// 	pubnub.publish({
+		// 		message: {
+		// 			// "number" : Math.floor(Math.random() * 360)
+		// 			"number" : i++
+		// 		},
+		// 		channel: 'JeremyMuller_Orbitals'
+		// 	});
+		// }
+	</script> -->
+
+</body>
+
+</html>
