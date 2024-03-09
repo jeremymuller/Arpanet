@@ -17,7 +17,7 @@ function buttonAction() {
 function init() {
     audioContext = new AudioContext();
 
-    socket = io.connect('http://192.168.0.98:8000'); // TP-Link
+    // socket = io.connect('http://192.168.0.98:8000'); // TP-Link
     // socket = io.connect('http://192.168.11.123:8000'); // Netgear flashrouter
     // socket = io.connect('http://10.0.1.4:8000'); // apple router
     // socket = io.connect('http://10.0.0.213:8000');
@@ -44,7 +44,36 @@ function reset() {
         'reload' : true
     };
     
-    socket.emit('reload', data);
+    // socket.emit('reload', data);
+    publishIt('reload', data);
+}
+
+function publishIt(key, data) {
+
+    // time test
+    pubnub.time(function (status, response) {
+        if (status.error) {
+            // handle error if something went wrong based on the status object
+        } else {
+            console.log(response.timetoken);
+        }
+    });
+
+    pubnub.publish({
+        message: {
+            [key]: data
+        },
+        channel: 'JeremyMuller_Arpanet',
+        storeInHistory: false
+        },
+        function (status, response) {
+            if (status.error) {
+                // handle error
+                console.log(status)
+            } else {
+                console.log(response.timetoken);
+            }
+    });
 }
 
 window.addEventListener("load", init);
